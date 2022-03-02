@@ -1,0 +1,47 @@
+config:
+  # 是否部署在linux系统下
+  in-linux: true
+  # 部署在win下时，照片的存放地址
+  dir-win: E:\Images\auto_mail_images\
+  # 部署在linux下时，照片的存放地址
+  dir-linux: /usr/local/images/auto_mail_images/
+  # 第一次牵手的时间（时间戳），2021年5月3日
+  first-date: 1619971200000
+
+spring:
+  mail:
+    # 配置 SMTP 服务器地址
+    host: smtp.qq.com
+    # 发送者邮箱
+    username: 462857080@qq.com
+    # 配置密码，注意不是真正的密码，而是刚刚申请到的授权码
+    password:
+    # 端口号465或587
+    port: 587
+    # 默认的邮件编码为UTF-8
+    default-encoding: UTF-8
+    # 配置SSL 加密工厂
+    properties:
+      mail:
+        smtp:
+          auth: true
+          socketFactoryClass: javax.net.ssl.SSLSocketFactory
+        #表示开启 DEBUG 模式，这样，邮件发送过程的日志会在控制台打印出来，方便排查错误
+        debug: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/wenan?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: wenan
+    password: 123456
+    # Druid连接池配置
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 1
+    minIdle: 1
+    maxActive: 5
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+  # MyBatis配置
+mybatis:
+  type-aliases-package: com.heavytiger.automail.pojo
+  mapper-locations: classpath:mapper/*.xml

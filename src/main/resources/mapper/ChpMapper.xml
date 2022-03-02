@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heavytiger.automail.mapper.ChpMapper">
+
+    <resultMap id="ChpMap" type="Chp">
+        <id column="chp_id" property="id"/>
+        <result column="chp_used" property="isUsed"/>
+        <result column="chp_sentence" property="sentence"/>
+    </resultMap>
+
+    <select id="queryChpNoUsed" resultMap="ChpMap">
+        SELECT *
+        FROM wenan.chp
+        WHERE chp_used = 0
+        ORDER BY RAND()
+        LIMIT 1
+    </select>
+
+    <update id="updateChpUsed" parameterType="int">
+        UPDATE wenan.chp
+        SET chp_used = 1
+        WHERE chp_id = #{id};
+    </update>
+</mapper>

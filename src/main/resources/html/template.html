@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title></title>
+</head>
+<body style="margin: 0;padding: 0">
+<!--记录时间-->
+<div class="main" style="width: 100%;margin: 40px auto;font-size:20px; color:#5f5e5e;text-align:center">
+    <span>今天是我们在一起的第</span>
+    <span style="font-size:24px;color:rgb(221, 73, 73)"> {0} </span>
+    <span>天</span>
+</div>
+<!--天气记录-->
+<div style="width:100%; margin: 0 auto;color:#5f5e5e;text-align:center">
+    <div style="display: flex; color:#676767; font-size:18px; justify-content: space-around; align-items: center;">
+        <span style="width:50%; text-align:center;">当前气温：{1}℃</span>
+        <span style="width:50%; text-align:center;">当前湿度：{2}%</span>
+    </div>
+
+    <span style="display:block;margin-top:20px;color:#676767;font-size:15px">近期天气预报</span>
+    <!--今天-->
+    <div style="display: flex;margin-top:20px;height: 30px;line-height: 30px;justify-content: space-around;align-items: center;">
+        <span style="width:18%; text-align:center;">今天</span>
+
+        <!--            <img style="height:26px;vertical-align:middle;" src='<%= threeDaysData[j].WeatherImgUrl %>' alt="">-->
+        <span style="width:26%; text-align:center;">早：{3}</span>
+        <span style="width:26%; text-align:center;">晚：{4}</span>
+
+        <span style="width:30%; text-align:center;">{5}℃ / {6}℃</span>
+    </div>
+    <!--明天-->
+    <div style="display: flex;margin-top:15px;height: 30px;line-height: 30px;justify-content: space-around;align-items: center;">
+        <span style="width:18%; text-align:center;">明天</span>
+
+        <!--            <img style="height:26px;vertical-align:middle;" src='<%= threeDaysData[j].WeatherImgUrl %>' alt="">-->
+        <span style="width:26%; text-align:center;">早：{7}</span>
+        <span style="width:26%; text-align:center;">晚：{8}</span>
+
+        <span style="width:30%; text-align:center;">{9}℃ / {10}℃</span>
+    </div>
+    <!--后天-->
+    <div style="display: flex;margin-top:15px;height: 30px;line-height: 30px;justify-content: space-around;align-items: center;">
+        <span style="width:18%; text-align:center;">后天</span>
+
+        <!--            <img style="height:26px;vertical-align:middle;" src='<%= threeDaysData[j].WeatherImgUrl %>' alt="">-->
+        <span style="width:26%; text-align:center;">早：{11}</span>
+        <span style="width:26%; text-align:center;">晚：{12}</span>
+
+        <span style="width:30%; text-align:center;">{13}℃ / {14}℃</span>
+    </div>
+</div>
+<!--图片以及每日一句-->
+<div style="text-align:center;margin:35px 0;">
+    <span style="display:block;margin-top:40px;color:#676767;font-size:15px">ONE · 一个</span>
+    <span style="display:block;margin-top:25px;font-size:22px; color:#9d9d9d; ">{15}</span>
+    <img src="cid:pic" style="width:100%;margin-top:10px;" alt="哎呀呀，图片可能出错了，快去骚扰憨憨，让他debug！">
+    <span style="color:#b0b0b0;font-size:13px;">{16}</span>
+    <div style="margin:10px auto;width:85%;color:#5f5e5e;">{17}</div>
+</div>
+
+</body>
+</html>
